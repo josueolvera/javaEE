@@ -12,7 +12,7 @@
         <title>Elije</title>
     </head>
     <body>
-        <form action="Bebida.php" method="get">
+        <form action="bebida.php" method="GET">
             Elije una bebida:<br>
             <select name="bebida">
                 <option value="cerveza">Cerveza</option>

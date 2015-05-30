@@ -55,13 +55,12 @@ public class PersistenciaBebida {
         this.bebidas = bebidas;
     }
     
-    public ArrayList<Bebida> GenerarBebida(String tipo){
+    public ArrayList<Bebida> generarBebida(String tipo){
          ArrayList<Bebida> subBeb = new ArrayList<Bebida>();
        for(Bebida b:bebidas){
-         if(b.getTipo().equals(tipo)){
-           subBeb.add(b);
+         if(b.getTipo().equals(tipo))subBeb.add(b);
         
-        }
+        
        }
         return subBeb;
     }

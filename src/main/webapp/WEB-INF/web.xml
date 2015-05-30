@@ -16,7 +16,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletAntro</servlet-name>
-        <url-pattern>/Bebida.php</url-pattern>
+        <url-pattern>/bebida.php</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -28,7 +28,7 @@ public class ServletAntro extends HttpServlet {
        
        String bebida= request.getParameter("bebida");
        PersistenciaBebida beb = new PersistenciaBebida();
-       ArrayList<Bebida> recomendar = beb.GenerarBebida(bebida);
+       ArrayList<Bebida> recomendar = beb.generarBebida(bebida);
         request.setAttribute("bebidas",recomendar );
         RequestDispatcher despachador = request.getRequestDispatcher("/misBebidas.jsp");
         despachador.forward(request, response);
