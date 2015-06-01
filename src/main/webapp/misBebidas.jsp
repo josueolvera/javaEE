@@ -18,6 +18,7 @@
             <c:forEach items="${bebidas}" var="bebida">
                 <tr>
                     <td>${bebida.nombre}</td>
+                    <td>${bebida.tipo}</td>
                 </tr>
                 
             </c:forEach>

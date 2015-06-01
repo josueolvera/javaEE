@@ -20,6 +20,7 @@
                 <option value="tequila">Tequila</option>
                 <option value="whisky">Whisky</option>
             </select>
+            <br>
             <input type="submit" value="seleccionar">
             
         </form>
