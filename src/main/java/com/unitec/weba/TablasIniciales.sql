@@ -5,4 +5,4 @@
                         PASSWORD VARCHAR(90));
 
 */
-select * from USUARIO;
+select * from usuario;

@@ -26,17 +26,18 @@ public class TestPojos {
        //Creamos la transaccion
                Transaction tranza = sesion.beginTransaction();
              // nos apuramos a hacer una transaccion 
-              /* Usuario u = new Usuario();
+               /*
+               Usuario u = new Usuario();
                u.setEmail("josue@gmail.com");
                u.setNombre("Josue Olvera");
                u.setLogin("jolvera1");
                u.setPassword("123");
-               
+              
                sesion.save(u);
                //Liberar la transaccion y cerrar la sesion 
                tranza.commit();
                sesion.close();
-                      */
+              */      
                
              /*  
                Usuario u = new Usuario();
@@ -51,12 +52,13 @@ public class TestPojos {
                */
                
                //Select por Id
-               
+             /*  
                Usuario u =(Usuario) sesion.createCriteria(Usuario.class).add(Restrictions.idEq(1)).uniqueResult();
                
                tranza.commit();
                sesion.close();
-               
+               */
+               /*
               List<Usuario> usuarios = sesion.createCriteria(Usuario.class).list();
               for(Usuario usu: usuarios){ 
               System.out.println("Usuarios encontrados:"+usu.getNombre());
@@ -67,7 +69,11 @@ public class TestPojos {
                sesion.close();
               
               
-               
+               */
+               Usuario u =(Usuario) sesion.createCriteria(Usuario.class).add(Restrictions.idEq(1)).uniqueResult();
+               sesion.delete(u);
+               tranza.commit();
+               sesion.close();
     }
     
 }
