@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -51,23 +52,41 @@ public class DAOUsuario {
     //Creamos el update
     public void actualizar(Usuario u)throws Exception
     {
-        
+        session.update(u);
+        cerrarTodo();
     }
     
     //Creamos el buscarTodos
     public List<Usuario> buscarTodos()throws Exception
     {
-        return null;
+        List<Usuario> usuarios = session.createCriteria(Usuario.class).list();
+        cerrarTodo();
+        return usuarios;
     }
     //Creamos el buscarPorID
     public Usuario buscarPorId(Integer id)throws Exception
     {
-        return null;
+        Usuario u =(Usuario) session.createCriteria(Usuario.class).add(Restrictions.idEq(id)).uniqueResult();
+         cerrarTodo();
+        return u;
+    }
+    public void eliminar(Integer id)throws Exception{
+        Usuario u =(Usuario) session.createCriteria(Usuario.class).add(Restrictions.idEq(1)).uniqueResult();
+        session.delete(u);
+         cerrarTodo();
     }
     //Creamos el de autenticar
     public boolean auntenticar(Usuario u)throws Exception
     {
-        return false;
+        boolean autenticado= false;
+          
+               for(Usuario us:buscarTodos()){
+        if (u.getLogin().equals(us.getLogin())&&u.getPassword().equals(us.getPassword())){
+            autenticado=true;
+        }
+        
+    }
+        return autenticado;
     }
     
 }
