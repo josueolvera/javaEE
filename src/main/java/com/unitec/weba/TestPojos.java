@@ -26,18 +26,18 @@ public class TestPojos {
        //Creamos la transaccion
                Transaction tranza = sesion.beginTransaction();
              // nos apuramos a hacer una transaccion 
-               /*
+               
                Usuario u = new Usuario();
-               u.setEmail("josue@gmail.com");
-               u.setNombre("Josue Olvera");
-               u.setLogin("jolvera1");
-               u.setPassword("123");
+               u.setEmail("charly@gmail.com");
+               u.setNombre("Charly Gomez");
+               u.setLogin("charlyn");
+               u.setPassword("456");
               
                sesion.save(u);
                //Liberar la transaccion y cerrar la sesion 
                tranza.commit();
                sesion.close();
-              */      
+                   
                
              /*  
                Usuario u = new Usuario();
@@ -70,10 +70,10 @@ public class TestPojos {
               
               
                */
-               Usuario u =(Usuario) sesion.createCriteria(Usuario.class).add(Restrictions.idEq(1)).uniqueResult();
+              /* Usuario u =(Usuario) sesion.createCriteria(Usuario.class).add(Restrictions.idEq(1)).uniqueResult();
                sesion.delete(u);
                tranza.commit();
-               sesion.close();
+               sesion.close();   */
     }
     
 }
