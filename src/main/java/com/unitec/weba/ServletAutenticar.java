@@ -7,6 +7,8 @@ package com.unitec.weba;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +36,7 @@ public class ServletAutenticar extends HttpServlet {
             u.setPassword(passsword);
         
         //redireccionamis el servlet
+         /*
             ModeloAutenticar modelo = new ModeloAutenticar();
             
             if(modelo.autenticar(u)){
@@ -44,5 +47,20 @@ public class ServletAutenticar extends HttpServlet {
         despachador.forward(request, response);
         
             }
+                 */
+             
+            DAOUsuario daou = new DAOUsuario();
+        try {
+            if(daou.auntenticar(u)){
+                RequestDispatcher despachador = request.getRequestDispatcher("/bienvenido.jsp");
+                despachador.forward(request, response);
+            }else{
+                RequestDispatcher despachador = request.getRequestDispatcher("/error.jsp");
+                despachador.forward(request, response);
+                
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 }
