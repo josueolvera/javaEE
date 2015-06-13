@@ -32,12 +32,17 @@ public class TestPojos {
                u.setNombre("Charly Gomez");
                u.setLogin("charlyn");
                u.setPassword("456");
-              
+          
+               
+               DAOUsuario daou = new DAOUsuario();
+               daou.guardar(u);
+               
+               /* 
                sesion.save(u);
                //Liberar la transaccion y cerrar la sesion 
                tranza.commit();
                sesion.close();
-                   
+               */    
                
              /*  
                Usuario u = new Usuario();

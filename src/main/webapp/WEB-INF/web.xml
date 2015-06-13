@@ -9,6 +9,10 @@
         <servlet-name>ServletAntro</servlet-name>
         <servlet-class>com.unitec.weba.ServletAntro</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletGuardarUsuario</servlet-name>
+        <servlet-class>com.unitec.weba.ServletGuardarUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servilleta</servlet-name>
         <url-pattern>/autenticar.php</url-pattern>
@@ -17,6 +21,10 @@
     <servlet-mapping>
         <servlet-name>ServletAntro</servlet-name>
         <url-pattern>/bebida.php</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletGuardarUsuario</servlet-name>
+        <url-pattern>/guardar-usuario.php</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
