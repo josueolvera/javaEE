@@ -32,7 +32,7 @@ public class Servlethola extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
      
        PrintWriter out = response.getWriter();
-       
-       out.println ("hola desde el servlet");
+       String nombre = request.getParameter("nombre");
+       out.println ("Hola como estas"+nombre);
     }
 }
