@@ -6,3 +6,8 @@
 
 */
  select * from usuario;
+CREATE TABLE ADMINISTRACION( ID_SESION INTEGER PRIMARY KEY AUTO_INCREMENT,
+                                ID_USUARIO INTEGER,
+                                FECHA DATE,
+                                IP VARCHAR(120),
+                                FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO));

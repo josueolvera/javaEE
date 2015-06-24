@@ -7,6 +7,8 @@ package com.unitec.weba;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -28,6 +30,24 @@ public class ServletAutenticar extends HttpServlet {
         
            String login= request.getParameter("login");
             String passsword = request.getParameter("password");
+            String ip= request.getRemoteAddr();
+                   Date fecha =Calendar.getInstance().getTime();
+                   
+                   //buscar aqui el usario cuyo login y password se proporcionaron
+                   //una vez buscado, verificar su id, supongamos que es 1
+                   Usuario u1 =new Usuario();
+                   u1.setIdUsuario(1);
+                   //Despues de esto guardar la sesion con la clase administracion 
+                   Administracion a= new Administracion();
+                   a.setFecha(fecha);
+                   a.setIp(ip);
+                   a.setIdUsuario(u1);
+                   DAOAdministracion daoadmon =new DAOAdministracion();
+        try {
+            daoadmon.guardar(a);
+        } catch (Exception ex) {
+           System.out.println(ex);
+        }
             
             //Creamos un model
             Usuario u = new Usuario();
