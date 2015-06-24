@@ -43,7 +43,7 @@ public class DAOAdministracion {
     public void guardar(Administracion u)throws Exception
     {
     //Aqui poner el codigo de tu guardado
-        
+        abrirSesion();
     //Despues invocas el metodo cerrar todo
          session.save(u);
         cerrarTodo();
@@ -52,6 +52,7 @@ public class DAOAdministracion {
     //Creamos el update
     public void actualizar(Administracion u)throws Exception
     {
+        abrirSesion();
         session.update(u);
         cerrarTodo();
     }
@@ -59,6 +60,7 @@ public class DAOAdministracion {
     //Creamos el buscarTodos
     public List<Administracion> buscarTodos()throws Exception
     {
+       abrirSesion();
         List<Administracion> usuarios = session.createCriteria(Administracion.class).list();
         cerrarTodo();
         return usuarios;
@@ -66,11 +68,13 @@ public class DAOAdministracion {
     //Creamos el buscarPorID
     public Administracion buscarPorId(Integer id)throws Exception
     {
+        abrirSesion();
         Administracion u =(Administracion) session.createCriteria(Administracion.class).add(Restrictions.idEq(id)).uniqueResult();
          cerrarTodo();
         return u;
     }
     public void eliminar(Integer id)throws Exception{
+       abrirSesion();
         Administracion u =(Administracion) session.createCriteria(Administracion.class).add(Restrictions.idEq(1)).uniqueResult();
         session.delete(u);
          cerrarTodo();

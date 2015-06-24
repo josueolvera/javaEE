@@ -16,7 +16,7 @@
             int edad=20;
             out.println("Tu edad es:"+edad);
             %>;
-            <form action="autenticar.php" method="post">
+            <form action="autenticar.php" method="POST">
             login <br>
             <input type="text" name="login"><br>
             password <br>
