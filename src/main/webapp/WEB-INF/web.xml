@@ -21,6 +21,10 @@
         <servlet-name>ServletGuardar</servlet-name>
         <servlet-class>com.unitec.weba.ServletGuardar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletBuscarTodosUsuarios</servlet-name>
+        <servlet-class>com.unitec.weba.ServletBuscarTodosUsuarios</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servilleta</servlet-name>
         <url-pattern>/autenticar.php</url-pattern>
@@ -41,6 +45,10 @@
     <servlet-mapping>
         <servlet-name>ServletGuardar</servlet-name>
         <url-pattern>/prueba</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletBuscarTodosUsuarios</servlet-name>
+        <url-pattern>/usuarios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -28,10 +28,10 @@ public class TestPojos {
              // nos apuramos a hacer una transaccion 
                
                Usuario u = new Usuario();
-               u.setEmail("charly@gmail.com");
-               u.setNombre("Charly Gomez");
-               u.setLogin("charlyn");
-               u.setPassword("456");
+               u.setEmail("uriel@gmail.com");
+               u.setNombre("Uriel Nuñez");
+               u.setLogin("chavo");
+               u.setPassword("123");
           
                
                DAOUsuario daou = new DAOUsuario();
